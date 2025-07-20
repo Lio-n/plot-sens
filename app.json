@@ -12,6 +12,7 @@
       "supportsTablet": true
     },
     "android": {
+       "permissions": ["android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_COARSE_LOCATION"],
         "ndkVersion": "27.1.12297006",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
