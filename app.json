@@ -12,8 +12,10 @@
       "supportsTablet": true
     },
     "android": {
-       "permissions": ["android.permission.ACCESS_FINE_LOCATION","android.permission.ACCESS_COARSE_LOCATION"],
-        "ndkVersion": "27.1.12297006",
+      "permissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -37,10 +39,23 @@
           "backgroundColor": "#ffffff"
         }
       ],
-        [
+      [
         "@rnmapbox/maps",
         {
           "RNMapboxMapsDownloadToken": "sk.eyJ1IjoibGlvLW4iLCJhIjoiY21kYnJ6b3ZqMDNzdzJsb2liOGg1Y2VibiJ9.TCAfwIUmASphf7cDS-yi9Q"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "buildToolsVersion": "36.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
         }
       ]
     ],
