@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
   locationButton: {
     position: "absolute",
     backgroundColor: "white",
-    top: 8,
-    left: 8,
+    bottom: 20,
+    right: 20,
     padding: 10,
     borderRadius: 10,
     elevation: 5,
