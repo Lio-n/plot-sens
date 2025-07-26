@@ -1,5 +1,5 @@
 import Mapbox from "@rnmapbox/maps";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 interface GEOMETRY_SHAPE {
   Polygon: GeoJSON.Feature;
@@ -21,7 +21,7 @@ const renderGeoType = (
           id="POLYGON_POINT_FILL"
           sourceID="GEO_SHAPE"
           style={{
-            fillColor: "rgba(0,150,255,0.3)",
+            fillColor: "#41b7c4b5",
             fillOutlineColor: "#007AFF",
           }}
         />
@@ -33,11 +33,11 @@ const renderGeoType = (
           sourceID="GEO_SHAPE"
           style={{
             lineColor: "#007AFF",
-            lineWidth: 4,
+            lineWidth: 2,
             lineOpacity: 0.8,
             lineJoin: "round",
             lineCap: "round",
-            lineDasharray: [2, 4],
+            lineDasharray: [1, 2],
           }}
         />
       );
@@ -52,7 +52,11 @@ const renderGeoType = (
   }
 };
 
-const GeoShapes = ({ points, geoType }: GEOSHAPES) => {
+const GeoShapes = ({
+  points,
+  geoType,
+  onClose,
+}: GEOSHAPES & { onClose: () => void }) => {
   const GEOMETRY_SHAPE: GEOMETRY_SHAPE = {
     Polygon: {
       properties: {},
@@ -83,19 +87,34 @@ const GeoShapes = ({ points, geoType }: GEOSHAPES) => {
   if (!points.length) return null;
 
   return (
-    <View>
-      <Mapbox.MarkerView coordinate={points[0]}>
-        <View
-          style={{
-            width: 10,
-            height: 10,
-            backgroundColor: "#ff2a00df",
-            borderRadius: 20,
-          }}
-        ></View>
+    <View key="ON_CLOSE">
+      <Mapbox.MarkerView coordinate={points[0]} key="ON_CLOSE_MARKER">
+        <TouchableOpacity onPressOut={onClose}>
+          <View
+            style={{
+              width: 20,
+              height: 20,
+              borderRadius: 10,
+              backgroundColor: "#ff2a00df",
+              alignItems: "center",
+              justifyContent: "center",
+              borderColor: "#ffffff",
+              borderWidth: 2,
+            }}
+          >
+            <View
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: 5,
+                backgroundColor: "#ffffff",
+              }}
+            />
+          </View>
+        </TouchableOpacity>
       </Mapbox.MarkerView>
 
-      {points.length >= 2 && (
+      {points.length >= 2 ? (
         <>
           <Mapbox.ShapeSource id="GEO_SHAPE" shape={GEOMETRY_SHAPE[geoType]}>
             {renderGeoType(geoType)}
@@ -111,6 +130,8 @@ const GeoShapes = ({ points, geoType }: GEOSHAPES) => {
             ></View>
           </Mapbox.MarkerView>
         </>
+      ) : (
+        <></>
       )}
     </View>
   );
@@ -122,3 +143,11 @@ const styles = StyleSheet.create({
   shape: {},
   layer: {},
 });
+//  style={{
+//             lineColor: "#007AFF",
+//             lineWidth: 4,
+//             lineOpacity: 0.8,
+//             lineJoin: "round",
+//             lineCap: "round",
+//             lineDasharray: [2, 4],
+//           }}

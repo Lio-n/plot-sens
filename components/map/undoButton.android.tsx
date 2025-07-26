@@ -3,25 +3,17 @@ import {
   StyleSheet,
   TouchableOpacity,
   TouchableOpacityProps,
-  View,
 } from "react-native";
 
-const DrawPlotButton = (
-  props: React.PropsWithoutRef<TouchableOpacityProps> &
-    React.RefAttributes<View> & { isDrawing: boolean }
-) => {
+const UndoButton = (props: TouchableOpacityProps) => {
   return (
-    <TouchableOpacity style={[styles.locationButton]} {...props}>
-      <Ionicons
-        name={props.isDrawing ? "leaf" : "leaf-outline"}
-        size={24}
-        color={props.isDrawing ? "red" : "black"}
-      />
+    <TouchableOpacity {...props} style={[props.style, styles.locationButton]}>
+      <Ionicons name="return-down-back-outline" size={24} color="black" />
     </TouchableOpacity>
   );
 };
 
-export default DrawPlotButton;
+export default UndoButton;
 
 const styles = StyleSheet.create({
   locationButton: {
