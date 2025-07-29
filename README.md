@@ -1,50 +1,34 @@
-# Welcome to your Expo app 👋
+# 📍 Plot-Sens
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A small demo built with **React Native** and **Mapbox**, allowing users to interact with a map, draw points, and create geospatial areas.
 
-## Get started
+## 🚀 Technologies Used
 
-1. Install dependencies
+- React Native  
+- @rnmapbox/maps  
+- TypeScript
 
-   ```bash
-   npm install
-   ```
+## 🗺️ Key Features
 
-2. Start the app
+- Interactive map visualization  
+- Draw points directly on the map  
+- Create areas/polygons (e.g., plots or fields)  
+- Save and delete drawn areas  
+- Undo last point while drawing and continue
 
-   ```bash
-   npx expo start
-   ```
+## 🎯 Purpose
 
-In the output, you'll find options to open the app in a
+This project was developed as a **technical demo** to explore working with maps in React Native. The goal was to practice manipulating geometries on the map and enabling basic geospatial interactions in a mobile environment.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🧪 Project Status
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+⚠️ In development.  
+Currently, all logic is handled on the client side. There's no persistent data storage yet.
 
-## Get a fresh project
+## 📸 Screenshots
 
-When you're ready, run:
+<img src="https://ik.imagekit.io/1zvyo7t98/Grabaci%C3%B3n%202025-07-26%20154301.gif"/>
 
-```bash
-npm run reset-project
-```
+## 🧾 License
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is free to use for educational and demonstration purposes.
